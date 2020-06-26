@@ -19,7 +19,7 @@
       do no not change function main().
 
 */
-
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -30,6 +30,47 @@
 
 void lastname (char *s)
 {
+  int l, m, n, o, p;
+  o = 0;
+  p = 0;
+  int status = 0;
+  int pause = 0;
+  char t[256];
+  strcpy (t,s);
+  n = strlen (t)-1;
+  
+  for(l = n; t[l]!= 32; l--)
+  {
+  } 
+  m = l + 1;
+  l = 0;
+ 
+  for ( l = m; l!= n; l++)
+  {
+    s[o] = t[l];
+    o++;
+  } 
+  for(l = 0; l <= o - 1; l++)
+  {
+  	if (s[l] >= 'a' && s[l] <= 'z')
+  	{
+  		s[l] = s[l] - 32;
+  		
+	  }
+  }
+  s[o] =',';
+  o++;
+  s[o] = 32;
+  o++;
+  l = 0;
+  for(l = o; l!= n + 1; l++)
+  {
+  	s[l] = t[p];
+  	p++;
+  }
+  l = 0;
+  
+
 }
 
 
