@@ -30,7 +30,57 @@ enum {sun, mon, tue, wed, thu, fri, sat};
 
 int day_of_week (int day, int month)
 {
-  return sun;
+  int a = 0;
+  int dms[12];
+  int total = 0;
+  
+  dms[0] = 31;
+  dms[1] = 29;
+  dms[2] = 31;
+  dms[3] = 30;
+  dms[4] = 31; 
+  dms[5] = 30;
+  dms[6] = 31;
+  dms[7] = 31;
+  dms[8] = 30;
+  dms[9] = 31;
+  dms[10] = 30;
+  dms[11] = 31;
+
+   while(a < month-1)
+  {
+    total= total+ dms[a];
+    a++;
+  }
+  total=total+ day;
+  switch(total%7)
+  {
+    case 6:
+      return mon;
+      break;
+    case 5:
+      return sun;
+      break;
+    case 4:
+      return sat;
+      break;
+    case 3:
+      return fri;
+      break;
+    case 2:
+      return thu;
+      break;
+    case 1:
+      return wed;
+      break;
+    case 0:
+      return tue;
+      break; 
+    default:
+    return 0;
+      break;  
+  }
+
 }
 
 /* Do not edit function main. */
