@@ -29,8 +29,21 @@
 
 int decimal (char *b)
 {
+  int a, tam;
+  int count = 0;
+  int aux = 1;
+  tam = strlen ( b );
   
-  return 0;
+  for(a = tam - 1; a >= 0 ; a--)
+  {
+    if(b[a] == '1' )
+    {
+      count = count + 1*aux;
+    }
+    aux = aux*2;
+  }
+  return count;
+  
 }
 
 #define USAGE "m004 <string>\n"
